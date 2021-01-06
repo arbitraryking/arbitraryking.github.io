@@ -155,6 +155,69 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Git-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HUANG AO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/06/Git-1/" class="post-title-link" itemprop="url">Git_1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-06 16:51:46 / Modified: 17:40:59" itemprop="dateCreated datePublished" datetime="2021-01-06T16:51:46+08:00">2021-01-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Basic-Git-operations-in-Git-bash"><a href="#Basic-Git-operations-in-Git-bash" class="headerlink" title="Basic Git operations in Git bash"></a>Basic Git operations in Git bash</h1><h2 id="使用本地文件生成git库"><a href="#使用本地文件生成git库" class="headerlink" title="使用本地文件生成git库"></a>使用本地文件生成git库</h2><p>在当前文件夹<br><br><code>$ git init //初始化后生成.git  $ git add . //添加文件到暂存区  $ git commit</code></p>
+<h2 id="本地代码库上传到远程代码服务器"><a href="#本地代码库上传到远程代码服务器" class="headerlink" title="本地代码库上传到远程代码服务器"></a>本地代码库上传到远程代码服务器</h2><p><code>$ git remote add origin 库地址</code><br>第一次推送<br><br><code>$ git push -u origin master</code><br>后续推送<br><br><code>$ git push origin master</code></p>
+<p>查看当前git状态<br><br><code>$ git status</code><br>暂存修改<br><br><code>$ git add &lt;file/dir&gt;</code><br>取消暂存文件<br><br><code>$ git reset HEAD &lt;file&gt;</code><br>提交修改<br><br><code>$ git commit -a -m &#39;description of this commit&#39;</code><br><code>$ git commit --amend //提交暂存代替上一次的提交</code>    </p>
+<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><p><code>$ git rm //从工作目录删除文件，并从暂存区移除</code><br><code>$ git rm -f //文件已经被修改过或已放到暂存区</code><br><code>$ git rm --cached //从Git仓库中抹去，但本地文件夹中留下</code>    </p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支创建<br><br><code>$ git branch branch_name</code><br>分支切换<br><br><code>$ git checkout branch_name</code><br>分支创建并切换(尽可能保证分支处于干净状态)<br><br><code>$ git commit</code><br><code>$ git checkout -b branch_name</code><br>删除分支(删除失败使用 -D 强制删除)<br><br><code>$ git branch -d branch_name</code><br>分支合并<br><br><code>$ git checkout branch_name //合并后保留的分支</code><br><code>$ git merge branch2bmerge</code>    </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,9 +346,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
