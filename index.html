@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-06 16:51:46 / Modified: 17:40:59" itemprop="dateCreated datePublished" datetime="2021-01-06T16:51:46+08:00">2021-01-06</time>
+              <time title="Created: 2021-01-06 16:51:46 / Modified: 17:48:04" itemprop="dateCreated datePublished" datetime="2021-01-06T16:51:46+08:00">2021-01-06</time>
             </span>
 
           
@@ -194,11 +194,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Basic-Git-operations-in-Git-bash"><a href="#Basic-Git-operations-in-Git-bash" class="headerlink" title="Basic Git operations in Git bash"></a>Basic Git operations in Git bash</h1><h2 id="使用本地文件生成git库"><a href="#使用本地文件生成git库" class="headerlink" title="使用本地文件生成git库"></a>使用本地文件生成git库</h2><p>在当前文件夹<br><br><code>$ git init //初始化后生成.git  $ git add . //添加文件到暂存区  $ git commit</code></p>
-<h2 id="本地代码库上传到远程代码服务器"><a href="#本地代码库上传到远程代码服务器" class="headerlink" title="本地代码库上传到远程代码服务器"></a>本地代码库上传到远程代码服务器</h2><p><code>$ git remote add origin 库地址</code><br>第一次推送<br><br><code>$ git push -u origin master</code><br>后续推送<br><br><code>$ git push origin master</code></p>
-<p>查看当前git状态<br><br><code>$ git status</code><br>暂存修改<br><br><code>$ git add &lt;file/dir&gt;</code><br>取消暂存文件<br><br><code>$ git reset HEAD &lt;file&gt;</code><br>提交修改<br><br><code>$ git commit -a -m &#39;description of this commit&#39;</code><br><code>$ git commit --amend //提交暂存代替上一次的提交</code>    </p>
-<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><p><code>$ git rm //从工作目录删除文件，并从暂存区移除</code><br><code>$ git rm -f //文件已经被修改过或已放到暂存区</code><br><code>$ git rm --cached //从Git仓库中抹去，但本地文件夹中留下</code>    </p>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支创建<br><br><code>$ git branch branch_name</code><br>分支切换<br><br><code>$ git checkout branch_name</code><br>分支创建并切换(尽可能保证分支处于干净状态)<br><br><code>$ git commit</code><br><code>$ git checkout -b branch_name</code><br>删除分支(删除失败使用 -D 强制删除)<br><br><code>$ git branch -d branch_name</code><br>分支合并<br><br><code>$ git checkout branch_name //合并后保留的分支</code><br><code>$ git merge branch2bmerge</code>    </p>
+          <h1 id="Basic-Git-operations-in-Git-bash"><a href="#Basic-Git-operations-in-Git-bash" class="headerlink" title="Basic Git operations in Git bash"></a>Basic Git operations in Git bash</h1><h2 id="使用本地文件生成git库"><a href="#使用本地文件生成git库" class="headerlink" title="使用本地文件生成git库"></a>使用本地文件生成git库</h2><p>在当前文件夹<br></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init //初始化后生成.git</span><br><span class="line">$ git add . //添加文件到暂存区</span><br><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
+<h2 id="本地代码库上传到远程代码服务器"><a href="#本地代码库上传到远程代码服务器" class="headerlink" title="本地代码库上传到远程代码服务器"></a>本地代码库上传到远程代码服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin 库地址</span><br></pre></td></tr></table></figure>
+<p>第一次推送<br></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>后续推送<br></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<p>查看当前git状态<br></p>
+<pre><code class="bash">$ git status</code></pre>
+<p>暂存修改<br></p>
+<pre><code class="bash">$ git add &lt;file/dir&gt;</code></pre>
+<p>取消暂存文件<br></p>
+<pre><code class="bash">$ git reset HEAD &lt;file&gt;</code></pre>
+<p>提交修改<br></p>
+<pre><code class="bash">$ git commit -a -m &#39;description of this commit&#39;  
+$ git commit --amend //提交暂存代替上一次的提交</code></pre>
+<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><pre><code class="bash">$ git rm //从工作目录删除文件，并从暂存区移除  
+$ git rm -f //文件已经被修改过或已放到暂存区    
+$ git rm --cached //从Git仓库中抹去，但本地文件夹中留下</code></pre>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支创建<br></p>
+<pre><code class="bash">$ git branch branch_name</code></pre>
+<p>分支切换<br></p>
+<pre><code class="bash">$ git checkout branch_name</code></pre>
+<p>分支创建并切换(尽可能保证分支处于干净状态)<br></p>
+<pre><code class="bash">$ git commit   
+$ git checkout -b branch_name</code></pre>
+<p>删除分支(删除失败使用 -D 强制删除)<br></p>
+<pre><code class="bash">$ git branch -d branch_name</code></pre>
+<p>分支合并<br></p>
+<pre><code class="bash">$ git checkout branch_name //合并后保留的分支  
+$ git merge branch2bmerge</code></pre>
 
       
     </div>
