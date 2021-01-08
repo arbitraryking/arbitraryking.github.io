@@ -20,15 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://example.com/tags/Git/index.html">
+  <meta name="description" content="#####题目Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. Each number in candidat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="combinationSum2">
+<meta property="og:url" content="http://example.com/2021/01/08/combinationSum2/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="#####题目Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target. Each number in candidat">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-08T12:56:46.000Z">
+<meta property="article:modified_time" content="2021-01-08T12:56:00.942Z">
 <meta property="article:author" content="HUANG AO">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="sum">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/Git/">
+<link rel="canonical" href="http://example.com/2021/01/08/combinationSum2/">
 
 
 <script id="page-configurations">
@@ -36,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: Git | Blog</title>
+  <title>combinationSum2 | Blog</title>
   
 
 
@@ -149,51 +155,86 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Git
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/08/combinationSum2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HUANG AO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          combinationSum2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-08 20:56:46 / Modified: 20:56:00" itemprop="dateCreated datePublished" datetime="2021-01-08T20:56:46+08:00">2021-01-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>#####题目<br>Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
+<p>Each number in candidates may only be used once in the combination.</p>
+<p><strong><em>Note</em></strong>:</p>
+<p>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.</p>
+<p><strong><em>Example 1</em></strong>:</p>
+<p><em>Input: candidates = [10,1,2,7,6,1,5], target = 8,</em><br/><br><em>A solution set is:</em><br><em>[<br>  [1, 7],<br>  [1, 2, 5],<br>  [2, 6],<br>  [1, 1, 6]<br>]</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum2</span>(<span class="params">self, candidates: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[List[int]]:</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">backtrack</span>(<span class="params">nums,targetLeft,path</span>):</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> targetLeft==<span class="number">0</span>:</span><br><span class="line">                res.append(path)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">                <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> nums[i]==nums[i-<span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">if</span> nums[i]&gt;targetLeft:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                backtrack(nums[i+<span class="number">1</span>:],targetLeft-nums[i],path+[nums[i]])</span><br><span class="line"></span><br><span class="line">        res=[]</span><br><span class="line">        backtrack(<span class="built_in">sorted</span>(candidates),target,[])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-06T16:51:46+08:00"
-              content="2021-01-06">
-          01-06
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+              <a href="/tags/sum/" rel="tag"># sum</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/06/Git-1/" itemprop="url">
-            <span itemprop="name">Git_1</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/08/3SUM/" rel="prev" title="3sum">
+      <i class="fa fa-chevron-left"></i> 3sum
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
